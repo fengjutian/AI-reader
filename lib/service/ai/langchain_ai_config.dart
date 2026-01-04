@@ -5,7 +5,19 @@ import 'package:langchain_google/langchain_google.dart';
 import 'package:langchain_openai/langchain_openai.dart';
 
 /// Normalized configuration for LangChain-backed chat providers.
+/// 用于LangChain支持的聊天AI提供商的标准化配置类
 class LangchainAiConfig {
+  /// 创建LangchainAiConfig实例
+  /// [identifier]：AI配置的唯一标识符
+  /// [model]：AI模型名称
+  /// [apiKey]：API密钥
+  /// [baseUrl]：API基础URL（可选）
+  /// [headers]：HTTP请求头（可选）
+  /// [temperature]：生成文本的随机性（0-1之间，值越高越随机）
+  /// [topP]：核采样参数，控制生成文本的多样性
+  /// [maxTokens]：生成文本的最大令牌数
+  /// [maxOutputTokens]：生成文本的最大输出令牌数（主要用于Google模型）
+  /// [additional]：其他附加配置参数
   LangchainAiConfig({
     required this.identifier,
     required this.model,
@@ -19,17 +31,37 @@ class LangchainAiConfig {
     this.additional,
   }) : headers = Map.unmodifiable(headers ?? const {});
 
+  /// AI配置的唯一标识符
   final String identifier;
+
+  /// AI模型名称
   final String model;
+
+  /// API密钥
   final String apiKey;
+
+  /// API基础URL
   final String? baseUrl;
+
+  /// HTTP请求头（不可修改）
   final Map<String, String> headers;
+
+  /// 生成文本的随机性（0-1之间，值越高越随机）
   final double? temperature;
+
+  /// 核采样参数，控制生成文本的多样性（0-1之间）
   final double? topP;
+
+  /// 生成文本的最大令牌数
   final int? maxTokens;
+
+  /// 生成文本的最大输出令牌数（主要用于Google模型）
   final int? maxOutputTokens;
+
+  /// 其他附加配置参数
   final Map<String, dynamic>? additional;
 
+  /// 将配置转换为OpenAI API选项
   ChatOpenAIOptions toOpenAIOptions() {
     return ChatOpenAIOptions(
       model: model.isEmpty ? null : model,
@@ -39,6 +71,7 @@ class LangchainAiConfig {
     );
   }
 
+  /// 将配置转换为Anthropic API选项
   ChatAnthropicOptions toAnthropicOptions() {
     return ChatAnthropicOptions(
       model: model.isEmpty ? null : model,
@@ -48,6 +81,7 @@ class LangchainAiConfig {
     );
   }
 
+  /// 将配置转换为Google Generative AI API选项
   ChatGoogleGenerativeAIOptions toGoogleOptions() {
     return ChatGoogleGenerativeAIOptions(
       model: model.isEmpty ? null : model,
@@ -57,6 +91,9 @@ class LangchainAiConfig {
     );
   }
 
+  /// 从偏好设置创建LangchainAiConfig实例
+  /// [identifier]：AI配置的唯一标识符
+  /// [raw]：原始配置映射
   factory LangchainAiConfig.fromPrefs(
     String identifier,
     Map<String, String> raw,
@@ -67,8 +104,10 @@ class LangchainAiConfig {
     final headers = _parseHeaders(raw['headers']);
     final additional = _parseJson(raw['extra'] ?? raw['additional']);
 
+    // 辅助函数：将字符串转换为double（如果可能）
     double? parseDouble(String? value) =>
         value == null ? null : double.tryParse(value.trim());
+    // 辅助函数：将字符串转换为int（如果可能）
     int? parseInt(String? value) =>
         value == null ? null : int.tryParse(value.trim());
 
@@ -86,6 +125,7 @@ class LangchainAiConfig {
     );
   }
 
+  /// 创建当前配置的副本，可选择性地覆盖某些参数
   LangchainAiConfig copyWith({
     String? model,
     String? apiKey,
@@ -112,17 +152,21 @@ class LangchainAiConfig {
   }
 }
 
+/// 解析HTTP请求头
+/// [headersRaw]：原始请求头字符串，可以是JSON格式或分号分隔的键值对
 Map<String, String> _parseHeaders(String? headersRaw) {
   if (headersRaw == null || headersRaw.trim().isEmpty) {
     return const {};
   }
 
   try {
+    // 尝试解析为JSON格式
     final decoded = jsonDecode(headersRaw);
     if (decoded is Map<String, dynamic>) {
       return decoded.map((key, value) => MapEntry(key, value.toString()));
     }
   } catch (_) {
+    // 如果JSON解析失败，尝试解析为分号分隔的键值对
     final entries = headersRaw.split(';');
     final map = <String, String>{};
     for (final entry in entries) {
@@ -139,6 +183,8 @@ Map<String, String> _parseHeaders(String? headersRaw) {
   return const {};
 }
 
+/// 解析JSON字符串为Map
+/// [value]：JSON字符串
 Map<String, dynamic>? _parseJson(String? value) {
   if (value == null || value.trim().isEmpty) {
     return null;
@@ -149,11 +195,16 @@ Map<String, dynamic>? _parseJson(String? value) {
     if (decoded is Map<String, dynamic>) {
       return decoded;
     }
-  } catch (_) {}
+  } catch (_) {
+    // 解析失败返回null
+  }
 
   return null;
 }
 
+/// 从完整URL中提取基础URL
+/// [url]：完整的API URL
+/// 该方法会移除URL路径中常见的API端点后缀，如'/chat', '/completions'等
 String? _deriveBaseUrl(String? url) {
   if (url == null || url.trim().isEmpty) {
     return null;
@@ -164,6 +215,7 @@ String? _deriveBaseUrl(String? url) {
     return url.trim();
   }
 
+  // 定义常见的API端点后缀，这些会被移除
   final removableSegments = {
     'chat',
     'messages',
@@ -174,6 +226,7 @@ String? _deriveBaseUrl(String? url) {
   };
 
   final segments = uri.pathSegments.toList(growable: true);
+  // 移除路径末尾的常见API端点后缀
   while (segments.isNotEmpty &&
       removableSegments.contains(segments.last.toLowerCase())) {
     segments.removeLast();
@@ -181,16 +234,21 @@ String? _deriveBaseUrl(String? url) {
 
   final cleaned = uri.replace(pathSegments: segments);
   final base = cleaned.toString();
+  // 移除末尾的斜杠
   if (base.endsWith('/')) {
     return base.substring(0, base.length - 1);
   }
   return base;
 }
 
+/// 合并两个配置，优先使用override中的非空值
+/// [base]：基础配置
+/// [override]：覆盖配置
 LangchainAiConfig mergeConfigs(
   LangchainAiConfig base,
   LangchainAiConfig override,
 ) {
+  // 合并请求头，override中的请求头会覆盖base中的同名请求头
   final mergedHeaders = <String, String>{}
     ..addAll(base.headers)
     ..addAll(override.headers);
@@ -208,6 +266,9 @@ LangchainAiConfig mergeConfigs(
   );
 }
 
+/// 合并两个Map，override中的键值对会覆盖base中的同名键值对
+/// [base]：基础Map
+/// [override]：覆盖Map
 Map<String, dynamic>? mergeMaps(
   Map<String, dynamic>? base,
   Map<String, dynamic>? override,
