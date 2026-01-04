@@ -1,44 +1,34 @@
-**English** | [简体中文](README_zh.md) | [Türkçe](README_tr.md) | [Русский](README_RU.md)
-
-<br>
+[English](README.md) | **简体中文** | [Türkçe](README_tr.md)
 
 <p align="center">
   <img src="./docs/images/Anx-logo.jpg" alt="Anx-logo" width="100" />
 </p>
-<h1 align="center">Anx Reader</h1>
-<p align="center"><a href="https://trendshift.io/repositories/10329" target="_blank"><img src="https://trendshift.io/api/badge/repositories/10329" alt="Anxcye%2Fanx-reader | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a></p>
+<h1 align="center">Anx Reader - 让阅读更专注</h1>
 
 <p align="center">
-  <a href="https://github.com/Anxcye/anx-reader#platform-support"><img src="https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20iOS%20%7C%20Android-lightgrey" alt="Platforms"></a>
-  <a href="https://github.com/Anxcye/anx-reader#supported-formats"><img src="https://img.shields.io/badge/formats-epub%20%7C%20fb2%20%7C%20mobi%20%7C%20txt%20%7C%20azw3%20%7C%20pdf-brightgreen" alt="Supported Formats"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Anxcye/anx-reader/releases/latest"><img src="https://img.shields.io/github/v/release/anxcye/anx-reader" alt="Latest Release"></a>
-  <a href="https://github.com/Anxcye/anx-reader/releases"><img src="https://img.shields.io/github/v/release/anxcye/anx-reader?include_prereleases" alt="Pre-release"></a>
   <a href="https://github.com/Anxcye/anx-reader/blob/main/LICENSE"><img src="https://img.shields.io/github/license/anxcye/anx-reader" alt="License" ></a>
   <a href="https://github.com/Anxcye/anx-reader/releases"><img src="https://img.shields.io/github/downloads/anxcye/anx-reader/total" alt="Downloads"></a>
   <a href="https://hellogithub.com/repository/819a2b3050204451bed552a8812114e5" target="_blank"><img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=819a2b3050204451bed552a8812114e5&claim_uid=WBA1XOQirm2GRqs&theme=small" alt="Featured｜HelloGitHub"/></a>
   <a href="https://github.com/anxcye/anx-reader/stargazers"><img src="https://img.shields.io/github/stars/anxcye/anx-reader" alt="stars"></a>
 </p>
 
-Anx Reader, a thoughtfully crafted e-book reader for book lovers. Featuring powerful AI capabilities and supporting various e-book formats, it makes reading smarter and more focused. With its modern interface design, we're committed to delivering pure reading pleasure.
+
+Anx Reader，一款为热爱阅读的你精心打造的电子书阅读器。集成多种 AI 能力，支持丰富的电子书格式，让阅读更智能、更专注。现代化界面设计，只为提供纯粹的阅读体验。
 
 
 ![](./docs/images/main.jpg)
 
 
-| Feature | Details | Status |
+| 功能模块 | 详细说明 | 状态 |
 | --- | --- | --- |
-| Format Support | EPUB/MOBI/AZW3/FB2/TXT/PDF fully supported | ✅ |
-| Cross-Platform Sync | Android/iOS/macOS/Windows coverage<br>Sync books, notes, and reading progress via WebDAV | ✅ |
-| AI Assistant | Organizes shelves by progress and tone<br>Generates mind maps for deeper understanding<br>On-demand AI dictionary and translation<br>Delivers perspective analysis and summaries | ✅ |
-| Custom Reading Experience | Tune letter, line, paragraph, and margin spacing<br>Adjust font size, style, and weight<br>Customize themes, backgrounds, alignment, and styles | ✅ |
-| Notes Workspace | Multiple color/style presets<br>Sort by time or chapter with color filters<br>Export to TXT/Markdown/CSV<br>Create shareable, well-designed cards | ✅ |
-| Reading Insights | Track reading time<br>View daily/weekly/monthly/yearly stats<br>Visual heatmap reveals reading habits | ✅ |
-| Advanced Extras | TTS with multi-voice, speed, tone, and sleep timer controls<br>Full-book translation with side-by-side view<br>Store books in the cloud and download on demand<br>One-tap simplified/traditional Chinese conversion | ✅ |
-| OPDS Catalogs | Built-in OPDS support with custom catalog management | 🛠️ In progress |
-
+| 多种格式 | EPUB/MOBI/AZW3/FB2/TXT/PDF 已支持 | ✅ |
+| 全平台数据同步 | Android/iOS/macOS/Windows 多端覆盖<br>书籍文件、笔记、阅读进度一站式同步 | ✅ |
+| AI 助理 | 按阅读进度与风格整理书架<br>生成思维导图辅助理解<br>AI 词典与即时翻译<br>提供观点分析与内容总结 | ✅ |
+| 自定义阅读体验 | 调整字间距、段间距、行间距与边距<br>自定义字体大小、样式与字重<br>配置阅读配色、背景图片<br>设置对齐方式与自定义样式 | ✅ |
+| 记录笔记 | 多配色与样式选择<br>按时间、章节排序并可按颜色筛选<br>导出 TXT/Markdown/CSV 等多种格式<br>一键生成美观卡片便于分享 | ✅ |
+| 阅读统计 | 记录阅读时长<br>按年/月/周/日维度查看<br>阅读热力图呈现习惯变化 | ✅ |
+| 其他 | 听书功能：支持多模型、语速、音色与定时<br>书籍全文翻译：原文、译文对照阅读<br>节省空间：云端上传节省本地存储，随用随下<br>简繁转换：中文简繁体一键转换 | ✅ |
+| OPDS 书源 | 支持 OPDS 书源，支持自定义添加  |  🛠️  |
 
 <table border="1">
   <tr>
@@ -56,8 +46,12 @@ Anx Reader, a thoughtfully crafted e-book reader for book lovers. Featuring powe
   <tr>
     <td>macOS</td>
     <td>
-      <a href="https://apps.apple.com/app/anx-reader/id6743196413" target="_blank"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" alt="Mac App Store" height="45"/></a>
-      <a href="https://github.com/Anxcye/anx-reader/releases/latest" target="_blank"><img src="https://github.com/user-attachments/assets/cf61e197-d756-4606-a8ad-fb591f79fdfc" alt="GitHub" height="45"/></a>
+      <a href="https://apps.apple.com/app/anx-reader/id6743196413" target="_blank">
+        <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" alt="Mac App Store" height="45"/>
+      </a>
+      <a href="https://github.com/Anxcye/anx-reader/releases/latest" target="_blank">
+        <img src="https://github.com/user-attachments/assets/cf61e197-d756-4606-a8ad-fb591f79fdfc" alt="GitHub" height="45"/>
+      </a>
     </td>
   </tr>
   <tr>
@@ -82,83 +76,43 @@ Anx Reader, a thoughtfully crafted e-book reader for book lovers. Featuring powe
 </table>
 
 
+### 我遇到了问题，怎么办？
+查看[故障排除](./docs/troubleshooting.md#简体中文)
+
+提出一个[issue](https://github.com/Anxcye/anx-reader/issues/new/choose)，将会尽快回复。
+
+Telegram 群组：[https://t.me/AnxReader](https://t.me/AnxReader)
+
+QQ群：1042905699
 
 
+### 截图
+| ![](./docs/images/zh/wide1.png) | ![](./docs/images/zh/wide2.png) |
+| :--------------------------: | :--------------------------: |
+| ![](./docs/images/zh/wide3.png) | ![](./docs/images/zh/wide4.png) |
+| ![](./docs/images/zh/wide5.png) | ![](./docs/images/zh/wide6.png) |
+| ![](./docs/images/zh/wide7.png) | ![](./docs/images/zh/wide8.png) |
 
 
-## Community Projects
-The following projects are maintained by the community and not officially supported. For issues or feedback related to these projects, please contact the respective project maintainers.
-
-**Calibre Plugin** [anx-reader-calibre-plugin](https://github.com/ptbsare/anx-reader-calibre-plugin)
-
-A Calibre plugin that enables direct management of your ANX Reader ebook library from Calibre. Particularly useful for NAS users looking to centralize their ebook collection.
-
-
-**Web Library Manager** [anx-calibre-manager](https://github.com/ptbsare/anx-calibre-manager)
-
-A modern web application for managing your ebook library with Calibre integration and WebDAV server functionality for ANX Reader devices.
-
-
-## I Encountered a Problem, What Should I Do?
-Check [Troubleshooting](./docs/troubleshooting.md#English)
-
-Submit an [issue](https://github.com/Anxcye/anx-reader/issues/new/choose), and we will respond as soon as possible.
-
-Telegram Group: [https://t.me/AnxReader](https://t.me/AnxReader)
-
-QQ Group：1042905699
-
-### Screenshots
-| ![](./docs/images/wide1.png) | ![](./docs/images/wide2.png) |
-| :------------------------------: | :----------------------------: |
-|   ![](./docs/images/wide3.png)   |  ![](./docs/images/wide4.png)  |
-|   ![](./docs/images/wide5.png)   |  ![](./docs/images/wide6.png)  |
-|   ![](./docs/images/wide7.png)   |  ![](./docs/images/wide8.png)  |
-
-
-| ![](./docs/images/mobile1.png) | ![](./docs/images/mobile2.png) | ![](./docs/images/mobile3.png) |
+| ![](./docs/images/zh/mobile1.png) | ![](./docs/images/zh/mobile2.png) | ![](./docs/images/zh/mobile3.png) |
 | :----------------------------: | :----------------------------: | :----------------------------: |
-| ![](./docs/images/mobile4.png) | ![](./docs/images/mobile5.png) | ![](./docs/images/mobile6.png) |
-| ![](./docs/images/mobile7.png) | ![](./docs/images/mobile8.png) | ![](./docs/images/mobile9.png) |
+| ![](./docs/images/zh/mobile4.png) | ![](./docs/images/zh/mobile5.png) | ![](./docs/images/zh/mobile6.png) |
+| ![](./docs/images/zh/mobile7.png) | ![](./docs/images/zh/mobile8.png) | ![](./docs/images/zh/mobile9.png) |
 
-## Donations
-If you like Anx Reader, please consider supporting the project by donating. Your donation will help me maintain and improve the project.
+## 捐赠
+如果你喜欢安读，请考虑捐赠支持项目。您的支持将帮助我优化功能、修复问题，并为您带来更好的阅读体验！感谢您的慷慨支持！
 
-❤️ [Donate](https://anxcye.com/home/7)
-
-## Building
-Want to build Anx Reader from source? Please follow these steps:
-- Install [Flutter](https://flutter.dev).
-- Clone and enter the project directory.
-- Run `flutter pub get`.
-- Run `flutter gen-l10n` to generate multi-language files.
-- Run `dart run build_runner build --delete-conflicting-outputs` to generate the Riverpod code.
-- Run `flutter run` to launch the application.
-
-You may encounter Flutter version incompatibility issues. Please refer to the [Flutter documentation](https://flutter.dev/docs/get-started/install).
+❤️ [捐赠](https://anxcye.com/home/7)
 
 
-## Code signing policy
-- Committers and reviewers: [Members team](https://github.com/anxcye/anx-reader/graphs/contributors)
-- Approvers: [Owners](https://github.com/anxcye)
-- [Privacy Policy](https://anx.anxcye.com/privacy.html)
-- [Terms of Service](https://anx.anxcye.com/terms.html)
 
-### Sponsors
-| ![signpath](https://signpath.org/assets/favicon-50x50.png) | Free code signing on Windows provided by [SignPath.io](https://about.signpath.io/),certficate by [SignPath Foundation](https://signpath.org/) |
-|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+## 构建
+希望从源码构建安读？请参考以下步骤：
+- 安装 [Flutter](https://flutter.dev)。
+- 克隆并进入项目目录。
+- 运行 `flutter pub get` 。
+- 运行 `flutter gen-l10n` 生成多语言文件。
+- 运行 `dart run build_runner build --delete-conflicting-outputs` 生成 Riverpod 代码。
+- 运行 `flutter run` 启动应用。
 
-
-## License
-This project is licensed under the [MIT License](./LICENSE).
-
-Starting from version 1.1.4, the open source license for the Anx Reader project has been changed from the MIT License to the GNU General Public License version 3 (GPLv3).
-
-After version 1.2.6, the selection and highlight feature has been rewritten, and the open source license has been changed from the GPL-3.0 License to the MIT License. All contributors agree to this change(#116).
-
-## Thanks
-[foliate-js](https://github.com/johnfactotum/foliate-js), which is MIT licensed, it used as the ebook renderer. Thanks to the author for providing such a great project.
-
-[foliate](https://github.com/johnfactotum/foliate), which is GPL-3.0 licensed, selection and highlight feature is inspired by this project. But since 1.2.6, the selection and highlight feature has been rewritten.
-
-And many [other open source projects](./pubspec.yaml), thanks to all the authors for their contributions.
+您可能遇到 Flutter 版本不兼容的问题，请参考 [Flutter 文档](https://flutter.dev/docs/get-started/install)。
