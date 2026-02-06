@@ -16,10 +16,10 @@ class AiCacheCount extends _$AiCacheCount {
 
   Future<void> clearCache() async {
     await AiCache.clearCache();
-    this.state = await _getCacheCount();
+    state = AsyncValue.data(await _getCacheCount());
   }
 
   Future<void> refresh() async {
-    this.state = await _getCacheCount();
+    state = AsyncValue.data(await _getCacheCount());
   }
 }

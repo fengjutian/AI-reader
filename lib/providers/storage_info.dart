@@ -46,7 +46,7 @@ class StorageInfo extends _$StorageInfo {
         }
       }
 
-      this.state = await build();
+      state = AsyncValue.data(await build());
 
       return true;
     } catch (e) {
@@ -128,6 +128,6 @@ class StorageInfo extends _$StorageInfo {
 
   Future<void> deleteFile(File file) async {
     await file.delete();
-    this.state = await build();
+    state = AsyncValue.data(await build());
   }
 }
